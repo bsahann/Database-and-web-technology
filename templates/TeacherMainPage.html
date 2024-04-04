@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<body onload="loadCourses(data={{courses}})">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flask Auth Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+
+
+
+</html>
+
+<div class="column is-4 is-offset-4">
+    <h1 class="title">Teacher Page</h1>
+  	<h4 class="subtitle">Welcome {{Name}}</h4>
+    <div class="box">
+<h4 class="subtitle">Create a class here:</h4>
+
+<form action="#" method = "post">
+
+  <label for="showcoursesforclass"> Class for:</label>
+  <select class="input is-large" id="showcoursesforclass" name="showcoursesforclass">
+  </select>
+  <label for="classname">Class name:</label>
+  <input class="input is-large" type="text" id="classname" name="classname"><br>
+  
+  <label for="datee">Date:</label>
+  <input class="input is-large" type="date" id="datee" name="datee"><br>
+  
+  <label for="location">Location:</label>
+  <input class="input is-large" type="text" id="location" name="location"><br>
+  
+  
+  <br><input class="button is-block is-info is-large is-fullwidth"  type="submit" name="Create" value="Create">
+
+</form>
+<br><p>{{text}}{{rndcode}} </p>
+<h4 class="subtitle">Enter the random code to see who is present or absent:</h4>
+
+<form action="#" method = "post">
+
+
+  <label for="entercode">Random code:</label>
+  <input class="input is-large" type="text" id="entercode" name="entercode"><br>
+  
+  <br><input class="button is-block is-info is-large is-fullwidth" type="submit" name="View" value="View">
+
+</form>
+<p>{{text1}}</p>
+  </div>  
+  
+<script>
+ function loadCourses(data){
+
+	for(let x in data){
+ 
+    node=document.createElement("Option");
+    textnode=document.createTextNode(data[x]);
+    node.appendChild(textnode);
+
+
+    document.getElementById("showcoursesforclass").appendChild(node);}
+
+    }
+</script> 
+
+</body>
+</html>
+

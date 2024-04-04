@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Home page </h2>
+
+<p>{{data}}</p>
+
+
+<form action="/g">
+  <label for="username">ID:</label><br>
+  <input type="text" id="username" name="username"><br>
+  
+  <label for="pwd">Password:</label><br>
+  <input type="password" id="pwd" name="pwd"><br>
+
+
+
+  
+  <input type="radio" id="teacher" name="teacheroruser" >
+  <label for="teacher">Teacher</label><br>
+  
+  <input type="radio" id="user" name="teacheroruser" >
+  <label for="user">User</label><br>
+  
+  <input type="submit" value="Log in">
+  <button name="button" value="OK" type="button" onclick="login(document.getElementById('username').value,document.getElementById('pwd').value)">Logggg in</button>  
+</form>
+<script>  
+
+
+    </script>
+<p></p>
+
+</body>
+</html>

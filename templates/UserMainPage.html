@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html>
+<body onload="buildTable(data={{classes}})">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flask Auth Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+<style>
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #2980B9;
+  color: white;
+  
+}
+table {
+  width: 100%;
+}
+tr:nth-child(even){background-color: #f2f2f2;}
+td,th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+</style>
+</head>
+
+
+
+</html>
+
+<div class="column is-4 is-offset-4">
+    <h1 class="title">User Page</h1>
+  	<h4 class="subtitle">Welcome {{Name}}</h4>
+    <div class="box">
+<h4 class="subtitle">You have the following classes for your courses:</h4>
+
+    <table cstyle="width:100%">
+        <tr  >
+
+            <th>className</th>
+            <th>date</th>
+            <th>location</th>
+            <th>Coursename</th>
+        </tr>
+    
+        <tbody id="myTable">
+            
+        </tbody>
+    </table><br>
+<form action="#" method = "post">
+
+ 
+  <label for="randomcode">Enter randomcode for presence:</label>
+  <input class="input is-large" type="text" id="randomcode" name="randomcode" placeholder="Enter code"><br>
+  <br>
+    
+  <input class="button is-block is-info is-large is-fullwidth" type="submit" name="Enter" value="Enter">
+
+</form>
+<p>{{text}}</p>
+
+  </div>   
+<script>
+
+	function buildTable(data){
+		var table = document.getElementById('myTable')
+
+		for (var i = 0; i < data.length; i++){
+			var row = `<tr>
+
+							<td>${data[i].className}</td>
+							<td>${data[i].date}</td>
+                            <td>${data[i].location}</td>
+                            <td>${data[i].courseName}</td>
+					  </tr>`
+			table.innerHTML += row
+
+
+		}
+	}
+
+</script>  
+
+</body>
+</html>

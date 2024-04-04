@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<body onload="loadCourses(data={{courses}})">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flask Auth Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css" />
+</head>
+
+
+
+</html>
+
+<div class="column is-4 is-offset-4">
+    <h1 class="title">Admin Page</h1>
+  	<h4 class="subtitle">Welcome {{Name}}</h4>
+    <div class="box">
+<h4 class="subtitle">Create new course here</h4>
+
+<form action="#" method = "post">
+  <label for="coursecreate">CourseName:</label>
+  <input class="input is-large" type="text" id="coursecreate" name="coursecreate" placeholder="Enter course">
+   <br>
+   <br><input class="button is-block is-info is-large is-fullwidth" type="submit" name="Create" value="Create">
+  <label for="showcoursesdelete">To delete course:</label>
+    <select class="input is-large" id="showcoursesdelete" name="showcoursesdelete">
+
+  </select>
+  <br>
+  <br><input class="button is-block is-info is-large is-fullwidth" type="submit" name="Delete" value="Delete">
+</form>
+<p>{{text1}}</p>
+<h4 class="subtitle">Assign teachers or users to course</h4>
+<form action="#" method = "post" >
+
+  
+  <label for="showcoursesassign">Assign course</label>
+  <select class="input is-large" id="showcoursesassign" name="showcoursesassign">
+
+  </select>
+
+  <label for="idassign">to ID:</label>
+  <input class="input is-large" type="text" id="idassign" name="idassign" placeholder="Enter ID"> for a
+
+ 
+  <input type="radio" id="user" name="who" value="User">
+  <label for="user">User or</label>
+  
+  <input type="radio" id="teacher" name="who" value="Teacher">
+  <label for="teacher">Teacher</label><br>
+  
+  <input class="button is-block is-info is-large is-fullwidth" type="submit" name="Assign" value="Assign" >
+</form>
+<p>{{text}}</p>
+  </div>   
+  
+<script>
+ function loadCourses(data){
+
+	for(let x in data){
+ 
+    node=document.createElement("Option");
+    textnode=document.createTextNode(data[x]);
+    node.appendChild(textnode);
+
+
+    document.getElementById("showcoursesdelete").appendChild(node);
+        }
+
+    
+    for(let x in data){
+ 
+    node=document.createElement("Option");
+    textnode=document.createTextNode(data[x]);
+    node.appendChild(textnode);
+
+    document.getElementById("showcoursesassign").appendChild(node);
+        }
+
+    }
+
+</script> 
+</body>
+</html>
